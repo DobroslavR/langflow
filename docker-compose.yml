@@ -4,7 +4,7 @@ services:
   backend:
     build:
       context: ./
-      dockerfile: ./dev.Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - "7860:7860"
     volumes:
@@ -14,7 +14,7 @@ services:
   frontend:
     build:
       context: ./src/frontend
-      dockerfile: ./dev.Dockerfile
+      dockerfile: ./Dockerfile
       args:
         - BACKEND_URL=http://backend:7860
     environment:
